@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Header } from '@/components/guaufresh/Header';
+import { HeroCarousel } from '@/components/guaufresh/HeroCarousel';
+import { Benefits } from '@/components/guaufresh/Benefits';
+import { Product } from '@/components/guaufresh/Product';
+import { Reviews } from '@/components/guaufresh/Reviews';
+import { HowToUse } from '@/components/guaufresh/HowToUse';
+import { Contact } from '@/components/guaufresh/Contact';
+import { Footer } from '@/components/guaufresh/Footer';
+import { CartSheet } from '@/components/guaufresh/CartSheet';
+import { WhatsAppButton } from '@/components/guaufresh/WhatsAppButton';
+import { PromoPopup } from '@/components/guaufresh/PromoPopup';
+import { LeadSidebar } from '@/components/guaufresh/LeadSidebar';
+import { StructuredData } from '@/components/guaufresh/StructuredData';
+---
+
+<BaseLayout title="Inicio">
+  <StructuredData />
+  <div class="min-h-screen">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+    >
+      Saltar al contenido principal
+    </a>
+    <Header client:load />
+    <main id="main-content">
+      <HeroCarousel client:load />
+      <Benefits client:visible />
+      <Product client:visible />
+      <Reviews client:visible />
+      <HowToUse />
+      <Contact client:visible />
+    </main>
+    <Footer />
+    <CartSheet client:load />
+    <WhatsAppButton />
+    <PromoPopup client:load />
+    <LeadSidebar client:load />
+  </div>
+</BaseLayout>

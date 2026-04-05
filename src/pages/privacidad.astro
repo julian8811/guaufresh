@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Header } from '@/components/guaufresh/Header';
+import { Footer } from '@/components/guaufresh/Footer';
+import { CartSheet } from '@/components/guaufresh/CartSheet';
+import { WhatsAppButton } from '@/components/guaufresh/WhatsAppButton';
+import { baseHref } from '@/lib/base-href';
+
+const tratamientoUrl = baseHref('/tratamiento-de-datos');
+---
+
+<BaseLayout title="Política de privacidad">
+  <div class="min-h-screen">
+    <Header client:load />
+    <main class="py-12 sm:py-16">
+      <article class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h1 class="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          Política de privacidad
+        </h1>
+        <p class="mt-2 text-sm text-muted-foreground">Última actualización: abril de 2026</p>
+
+        <div class="mt-10 space-y-8 text-[15px] leading-relaxed text-foreground/90">
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">1. Responsable del tratamiento</h2>
+            <p>
+              <strong>Guau Fresh</strong> actúa como responsable del tratamiento de datos personales conforme a la Ley 1581
+              de 2012 y normas concordantes. Los datos se tratan con fines determinados, explícitos y legítimos.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">2. Datos que podemos recopilar</h2>
+            <ul class="list-disc space-y-2 pl-5">
+              <li>Datos de identificación y contacto (nombre, correo electrónico, teléfono, ciudad).</li>
+              <li>Datos de transacción o pedido cuando realiza una compra o consulta.</li>
+              <li>Datos técnicos del dispositivo o navegación (por ejemplo, dirección IP, tipo de navegador) cuando sea necesario por seguridad o analítica.</li>
+            </ul>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">3. Finalidades</h2>
+            <ul class="list-disc space-y-2 pl-5">
+              <li>Gestionar pedidos, envíos, facturación y atención al cliente.</li>
+              <li>Responder solicitudes, quejas o reclamos.</li>
+              <li>Enviar comunicaciones comerciales cuando exista base legal o autorización previa, según el caso.</li>
+              <li>Mejorar el Sitio, la seguridad y la experiencia de usuario.</li>
+              <li>Cumplir obligaciones legales o regulatorias.</li>
+            </ul>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">4. Base legal</h2>
+            <p>
+              El tratamiento se fundamenta en la ejecución de contratos o medidas precontractuales, el cumplimiento de
+              obligaciones legales, el interés legítimo cuando corresponda (siempre respetando sus derechos) y/o su
+              autorización cuando la ley la exija de forma expresa.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">5. Conservación</h2>
+            <p>
+              Conservamos los datos el tiempo necesario para las finalidades indicadas y los plazos legales o contractuales
+              aplicables. Posteriormente serán suprimidos o anonimizados cuando proceda.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">6. Derechos de los titulares</h2>
+            <p>
+              Usted puede ejercer los derechos de conocer, actualizar, rectificar y suprimir sus datos, revocar la
+              autorización y/o solicitar prueba de la misma, salvo excepciones legales, y acceder de forma gratuita a sus
+              datos tratados. Para ello puede contactarnos por los medios indicados en el Sitio. También puede presentar una
+              queja ante la Superintendencia de Industria y Comercio (SIC) cuando corresponda.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">7. Transferencias y encargados</h2>
+            <p>
+              Podemos compartir datos con proveedores que nos prestan servicios (por ejemplo, hosting, pasarelas de pago,
+              mensajería o logística), bajo acuerdos que exigen confidencialidad y seguridad. Las transferencias internacionales,
+              si las hubiera, se realizarán cuando la ley lo permita y con las garantías requeridas.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">8. Seguridad</h2>
+            <p>
+              Adoptamos medidas técnicas, humanas y administrativas razonables para proteger la información. Ningún sistema es
+              infalible; le recomendamos proteger sus credenciales y dispositivos.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">9. Cambios</h2>
+            <p>
+              Podemos actualizar esta política. La versión vigente se publicará en el Sitio con su fecha de actualización.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">10. Contacto</h2>
+            <p>
+              Para ejercer sus derechos o consultas sobre privacidad, utilice los canales de contacto del Sitio. Para el
+              tratamiento detallado bajo la Ley 1581, consulte también nuestra página de{' '}
+              <a href={tratamientoUrl} class="font-medium text-primary underline-offset-4 hover:underline">
+                tratamiento de datos personales
+              </a>
+              .
+            </p>
+          </section>
+        </div>
+      </article>
+    </main>
+    <Footer />
+    <CartSheet client:load />
+    <WhatsAppButton />
+  </div>
+</BaseLayout>

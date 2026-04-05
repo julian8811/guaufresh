@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Header } from '@/components/guaufresh/Header';
+import { Footer } from '@/components/guaufresh/Footer';
+import { CartSheet } from '@/components/guaufresh/CartSheet';
+import { WhatsAppButton } from '@/components/guaufresh/WhatsAppButton';
+---
+
+<BaseLayout title="Términos y condiciones">
+  <div class="min-h-screen">
+    <Header client:load />
+    <main class="py-12 sm:py-16">
+      <article class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h1 class="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          Términos y condiciones de uso
+        </h1>
+        <p class="mt-2 text-sm text-muted-foreground">Última actualización: abril de 2026</p>
+
+        <div class="mt-10 space-y-8 text-[15px] leading-relaxed text-foreground/90">
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">1. Identificación</h2>
+            <p>
+              El sitio web y los servicios asociados a la marca <strong>Guau Fresh</strong> (en adelante, el «Sitio») son
+              operados con fines comerciales en Colombia. Al acceder o utilizar el Sitio, usted acepta estos términos. Si
+              no está de acuerdo, le recomendamos no utilizar el Sitio.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">2. Uso del Sitio</h2>
+            <p>
+              El Sitio tiene como finalidad informar sobre productos de cuidado para mascotas, permitir la comunicación con
+              el equipo y, cuando corresponda, gestionar pedidos o solicitudes. Usted se compromete a utilizar el Sitio de
+              manera lícita, sin intentar dañar, sobrecargar o interferir con su funcionamiento.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">3. Productos, precios y pedidos</h2>
+            <p>
+              Las descripciones, imágenes y precios tienen carácter orientativo y pueden actualizarse. La aceptación de un
+              pedido queda sujeta a disponibilidad, validación de datos y medios de pago. Nos reservamos el derecho de
+              rechazar o cancelar pedidos en casos de error manifiesto en precio o stock, notificando al cliente cuando sea
+              posible.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">4. Envíos y entregas</h2>
+            <p>
+              Los plazos y costos de envío se informan en el proceso de compra o por los canales indicados en el Sitio. Los
+              tiempos son estimados y pueden verse afectados por causas ajenas a nuestro control (transporte, clima,
+              festivos, etc.).
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">5. Propiedad intelectual</h2>
+            <p>
+              Los contenidos del Sitio (textos, logotipos, imágenes, diseño) están protegidos por la normativa aplicable.
+              Queda prohibida su reproducción o uso comercial no autorizado sin consentimiento previo por escrito.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">6. Limitación de responsabilidad</h2>
+            <p>
+              Los productos están destinados al cuidado externo de mascotas según las instrucciones de uso. El uso inadecuado
+              o contraindicaciones específicas de cada animal son responsabilidad del titular. En la medida permitida por la
+              ley, no nos hacemos responsables por daños indirectos o lucro cesante derivados del uso del Sitio o de los
+              productos.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">7. Ley aplicable</h2>
+            <p>
+              Estos términos se rigen por las leyes de la República de Colombia. Las controversias se someten a los
+              tribunales competentes de Colombia, salvo normas imperativas en favor del consumidor.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">8. Contacto</h2>
+            <p>
+              Para consultas sobre estos términos, puede utilizar los medios de contacto publicados en la sección de
+              contacto del Sitio.
+            </p>
+          </section>
+        </div>
+      </article>
+    </main>
+    <Footer />
+    <CartSheet client:load />
+    <WhatsAppButton />
+  </div>
+</BaseLayout>

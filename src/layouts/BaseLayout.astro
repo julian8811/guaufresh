@@ -1,0 +1,119 @@
+---
+import type { Metadata } from 'astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+/** Public assets under `base` (GitHub Pages project site, etc.) */
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
+const metadata: Metadata = {
+  title: {
+    default: 'Guau Fresh | Espuma Limpiadora en Seco para Perros - Colombia',
+    template: '%s | Guau Fresh'
+  },
+  description: 'Espuma limpiadora en seco para perros con ingredientes 100% naturales. Limpia, humecta y da brillo al pelaje de tu mascota sin agua. Envío a toda Colombia. Compra en línea.',
+  keywords: [
+    'espuma limpiadora perros',
+    'shampoo seco perros',
+    'limpieza en seco mascotas',
+    'cuidado pelaje perros',
+    'grooming perros Colombia',
+    'productos naturales mascotas',
+    'Guau Fresh',
+    'espuma para perros',
+    'limpiador pelaje canino',
+    'higiene mascotas',
+    'shampoo sin agua perros',
+    'cuidado canino natural'
+  ],
+  authors: [{ name: 'Guau Fresh Colombia' }],
+  creator: 'Guau Fresh',
+  publisher: 'Guau Fresh Colombia',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://guaufresh.com'),
+  openGraph: {
+    title: 'Guau Fresh | Espuma Limpiadora en Seco para Perros',
+    description: 'Limpia, humecta y da brillo al pelaje de tu mascota con ingredientes 100% naturales. Sin necesidad de agua.',
+    url: 'https://guaufresh.com',
+    siteName: 'Guau Fresh',
+    images: [
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/post01_producto_ai_real-bnPpks8M8SlChOZAdQp2j5bVoHwUqD.png',
+        width: 1200,
+        height: 630,
+        alt: 'Guau Fresh - Espuma Limpiadora para Perros',
+      },
+    ],
+    locale: 'es_CO',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Guau Fresh | Espuma Limpiadora para Perros',
+    description: 'Limpia, humecta y da brillo al pelaje de tu mascota con ingredientes naturales.',
+    images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/post01_producto_ai_real-bnPpks8M8SlChOZAdQp2j5bVoHwUqD.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  category: 'ecommerce',
+  icons: {
+    icon: [
+      {
+        url: asset('/favicon-paw.png'),
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        url: asset('/favicon-paw.png'),
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        url: asset('/icon.svg'),
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: asset('/favicon-paw.png'),
+  },
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href={asset('/favicon-paw.png')} sizes="32x32" />
+    <link rel="apple-touch-icon" href={asset('/favicon-paw.png')} />
+    <link rel="icon" type="image/svg+xml" href={asset('/icon.svg')} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? `${title} | Guau Fresh` : metadata.title?.default}</title>
+    <meta name="description" content={metadata.description} />
+    <meta name="keywords" content={metadata.keywords?.join(', ')} />
+    <meta property="og:title" content={metadata.openGraph?.title} />
+    <meta property="og:description" content={metadata.openGraph?.description} />
+    <meta property="og:image" content={metadata.openGraph?.images?.[0]?.url} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={metadata.twitter?.title} />
+    <meta name="twitter:description" content={metadata.twitter?.description} />
+    <meta name="twitter:image" content={metadata.twitter?.images?.[0]} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-sans antialiased">
+    <slot />
+  </body>
+</html>

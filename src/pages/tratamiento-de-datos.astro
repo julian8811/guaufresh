@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Header } from '@/components/guaufresh/Header';
+import { Footer } from '@/components/guaufresh/Footer';
+import { CartSheet } from '@/components/guaufresh/CartSheet';
+import { WhatsAppButton } from '@/components/guaufresh/WhatsAppButton';
+import { baseHref } from '@/lib/base-href';
+
+const privacidadUrl = baseHref('/privacidad');
+---
+
+<BaseLayout title="Tratamiento de datos personales">
+  <div class="min-h-screen">
+    <Header client:load />
+    <main class="py-12 sm:py-16">
+      <article class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <h1 class="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          Tratamiento de datos personales (Ley 1581 de 2012)
+        </h1>
+        <p class="mt-2 text-sm text-muted-foreground">Última actualización: abril de 2026</p>
+
+        <div class="mt-10 space-y-8 text-[15px] leading-relaxed text-foreground/90">
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">Marco legal</h2>
+            <p>
+              De conformidad con la <strong>Ley 1581 de 2012</strong> (reglamentada en parte por el Decreto 1074 de 2015 y
+              normas complementarias), por la cual se dictan disposiciones generales para la protección de datos personales,
+              y demás normas aplicables en Colombia, <strong>Guau Fresh</strong> informa lo siguiente a los titulares de
+              datos personales.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">Identificación del responsable</h2>
+            <p>
+              <strong>Responsable del tratamiento:</strong> Guau Fresh.<br />
+              <strong>Correo y medios de contacto:</strong> los publicados en la sección de contacto del sitio web oficial.
+            </p>
+            <p class="text-sm text-muted-foreground">
+              Los datos de identificación societaria completos (razón social, NIT, domicilio) pueden incorporarse en esta
+              página cuando la empresa los defina para efectos legales y de transparencia.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">Finalidades del tratamiento</h2>
+            <p>Las finalidades incluyen, entre otras:</p>
+            <ul class="list-disc space-y-2 pl-5">
+              <li>Atender solicitudes de información, cotizaciones, pedidos y postventa.</li>
+              <li>Gestionar la relación comercial, facturación, envíos y logística.</li>
+              <li>Gestionar cuentas de usuario o accesos al Sitio, cuando existan.</li>
+              <li>Realizar estudios internos de servicio y mejora de la oferta, con base en datos anonimizados o agregados cuando sea posible.</li>
+              <li>Cumplir obligaciones legales, contractuales y responder a autoridades cuando corresponda.</li>
+              <li>Envío de comunicaciones comerciales, previa autorización del titular o según las excepciones legales aplicables.</li>
+            </ul>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">Derechos del titular</h2>
+            <p>Como titular de datos personales, de acuerdo con la ley usted tiene derecho a:</p>
+            <ul class="list-disc space-y-2 pl-5">
+              <li>
+                <strong>Acceder</strong> de forma gratuita a sus datos que hayan sido objeto de tratamiento, en los casos y
+                condiciones previstos en la ley.
+              </li>
+              <li>
+                <strong>Conocer, actualizar y rectificar</strong> sus datos frente a datos parciales, inexactos, incompletos,
+                fraccionados, que induzcan a error o a cuyo tratamiento no esté facultado el responsable.
+              </li>
+              <li>
+                <strong>Solicitar prueba</strong> de la autorización otorgada al responsable, salvo cuando la ley exceptúe
+                dicha autorización.
+              </li>
+              <li>
+                <strong>Presentar ante la Superintendencia de Industria y Comercio (SIC)</strong> quejas por infracciones a
+                lo dispuesto en la normativa vigente.
+              </li>
+              <li>
+                <strong>Revocar la autorización</strong> y/o solicitar la <strong>supresión</strong> del dato cuando en el
+                tratamiento no se respeten los principios, derechos y garantías constitucionales y legales, siempre que no
+                exista un deber legal o contractual que impida suprimirlos.
+              </li>
+              <li>
+                <strong>Solicitar</strong>, una vez cumplida la finalidad del tratamiento y sin perjuicio de normas legales
+                en contrario, la supresión de datos personales.
+              </li>
+            </ul>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">Procedimiento para ejercer derechos</h2>
+            <p>
+              Las solicitudes de consulta, rectificación, actualización o supresión, o la revocatoria de la autorización,
+              pueden dirigirse a los correos o canales indicados en el Sitio, adjuntando identificación razonable del
+              titular. El responsable atenderá las solicitudes en los términos señalados por la ley y la reglamentación
+              aplicable.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">Autorización</h2>
+            <p>
+              Cuando el tratamiento requiera autorización previa, informada y expresa del titular, esta se solicitará por
+              medios idóneos (formularios, casillas de aceptación, etc.), indicando de manera clara las finalidades y el
+              alcance. El titular podrá consultar en todo momento la{' '}
+              <a href={privacidadUrl} class="font-medium text-primary underline-offset-4 hover:underline">
+                política de privacidad
+              </a>
+              .
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">Área responsable de atención</h2>
+            <p>
+              Las peticiones, consultas y reclamos relacionados con el tratamiento de datos personales serán atendidos por el
+              área o persona designada por Guau Fresh, a través de los medios de contacto publicados en el Sitio.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="font-heading text-xl font-semibold text-foreground">Vigencia</h2>
+            <p>
+              Esta información se mantendrá disponible mientras el Sitio esté activo y el responsable realice tratamiento de
+              datos conforme a las finalidades descritas, actualizándose cuando cambien las políticas o la normativa lo
+              exija.
+            </p>
+          </section>
+        </div>
+      </article>
+    </main>
+    <Footer />
+    <CartSheet client:load />
+    <WhatsAppButton />
+  </div>
+</BaseLayout>

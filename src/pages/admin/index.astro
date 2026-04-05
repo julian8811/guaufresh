@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Header } from '../../components/guaufresh/Header.tsx';
+import { AdminLayout } from '../../components/guaufresh/AdminLayout.tsx';
+---
+
+<BaseLayout title="Admin - Guau Fresh">
+  <Header client:load />
+  <AdminLayout client:load />
+</BaseLayout>

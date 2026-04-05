@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Jerarquía tipográfica Guau Fresh
+  — Principal: Nunito (cuerpo, UI)
+  — Secundaria: Quicksand (botones, etiquetas, apoyos)
+  — Terciaria: Playfair Display (títulos de sección, acentos editoriales)
+  — Carrusel: Galano Grotesque Light Italic (coloca el .woff2 en public/fonts/)
+*/
+@font-face {
+  font-family: 'Galano Grotesque';
+  src:
+    url('/fonts/GalanoGrotesque-LightItalic.woff2') format('woff2'),
+    url('/fonts/GalanoGrotesque-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-primary: 'Nunito', system-ui, sans-serif;
+    --font-secondary: 'Quicksand', system-ui, sans-serif;
+    --font-tertiary: 'Playfair Display', Georgia, serif;
+    --font-carousel: 'Galano Grotesque', var(--font-primary);
+    --background: oklch(0.98 0.005 180);
+    --foreground: oklch(0.25 0.02 180);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.25 0.02 180);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.25 0.02 180);
+    --primary: oklch(0.65 0.15 175);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.88 0.15 95);
+    --secondary-foreground: oklch(0.25 0.02 180);
+    --muted: oklch(0.95 0.01 180);
+    --muted-foreground: oklch(0.5 0.02 180);
+    --accent: oklch(0.88 0.15 95);
+    --accent-foreground: oklch(0.25 0.02 180);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.9 0.02 180);
+    --input: oklch(0.95 0.01 180);
+    --ring: oklch(0.65 0.15 175);
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: oklch(0.2 0.02 180);
+    --foreground: oklch(0.95 0.01 180);
+    --card: oklch(0.25 0.02 180);
+    --card-foreground: oklch(0.95 0.01 180);
+    --popover: oklch(0.25 0.02 180);
+    --popover-foreground: oklch(0.95 0.01 180);
+    --primary: oklch(0.65 0.15 175);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.75 0.12 95);
+    --secondary-foreground: oklch(0.2 0.02 180);
+    --muted: oklch(0.3 0.02 180);
+    --muted-foreground: oklch(0.7 0.02 180);
+    --accent: oklch(0.75 0.12 95);
+    --accent-foreground: oklch(0.2 0.02 180);
+    --destructive: oklch(0.5 0.2 25);
+    --destructive-foreground: oklch(0.95 0.01 180);
+    --border: oklch(0.35 0.02 180);
+    --input: oklch(0.3 0.02 180);
+    --ring: oklch(0.65 0.15 175);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Carousel animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}

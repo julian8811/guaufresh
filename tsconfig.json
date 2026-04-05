@@ -1,0 +1,26 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/ui/*": ["./src/components/ui/*"],
+      "@/components/guaufresh/*": ["./src/components/guaufresh/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/*": ["./src/*"]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*", "components/**/*", "app/**/*", "hooks/**/*"],
+  "exclude": ["node_modules", "public"]
+}

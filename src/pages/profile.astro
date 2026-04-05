@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Header } from '../components/guaufresh/Header';
+import { Footer } from '../components/guaufresh/Footer';
+import { CartSheet } from '../components/guaufresh/CartSheet';
+import { WhatsAppButton } from '../components/guaufresh/WhatsAppButton';
+import { ProfileContent } from '../components/guaufresh/ProfileContent';
+---
+
+<BaseLayout title="Mi Perfil">
+  <div class="min-h-screen">
+    <Header client:load />
+    <main class="py-12 sm:py-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold tracking-tight text-foreground">Mi Perfil</h1>
+        <ProfileContent client:load />
+      </div>
+    </main>
+    <Footer />
+    <CartSheet client:load />
+    <WhatsAppButton />
+  </div>
+</BaseLayout>
