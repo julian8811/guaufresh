@@ -1,4 +1,8 @@
+import { siteUrl } from "@/lib/site-url"
+
 export function StructuredData() {
+  const base = siteUrl()
+
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -16,7 +20,7 @@ export function StructuredData() {
     },
     offers: {
       "@type": "Offer",
-      url: "https://guaufresh.com",
+      url: base,
       priceCurrency: "COP",
       price: "45000",
       priceValidUntil: "2026-12-31",
@@ -65,8 +69,8 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Guau Fresh",
-    url: "https://guaufresh.com",
-    logo: "https://guaufresh.com/logo-guaufresh.png",
+    url: base,
+    logo: `${base}/logo-guaufresh.png`,
     sameAs: [
       "https://www.facebook.com/guaufresh",
       "https://www.instagram.com/guaufresh",
@@ -85,9 +89,9 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Guau Fresh Colombia",
-    image: "https://guaufresh.com/logo-guaufresh.png",
-    "@id": "https://guaufresh.com",
-    url: "https://guaufresh.com",
+    image: `${base}/logo-guaufresh.png`,
+    "@id": base,
+    url: base,
     telephone: "+57-XXX-XXX-XXXX",
     address: {
       "@type": "PostalAddress",
@@ -150,13 +154,13 @@ export function StructuredData() {
         "@type": "ListItem",
         position: 1,
         name: "Inicio",
-        item: "https://guaufresh.com"
+        item: base
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Espuma Limpiadora",
-        item: "https://guaufresh.com/#producto"
+        item: `${base}/#producto`
       }
     ]
   }

@@ -1,12 +1,14 @@
 ---
 import type { Metadata } from 'astro';
 import '../styles/global.css';
+import { siteUrl } from '@/lib/site-url';
 
 interface Props {
   title?: string;
 }
 
 const { title } = Astro.props;
+const publicSite = siteUrl();
 
 /** Public assets under `base` (GitHub Pages project site, etc.) */
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
@@ -39,11 +41,11 @@ const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://guaufresh.com'),
+  metadataBase: new URL(publicSite),
   openGraph: {
     title: 'Guau Fresh | Espuma Limpiadora en Seco para Perros',
     description: 'Limpia, humecta y da brillo al pelaje de tu mascota con ingredientes 100% naturales. Sin necesidad de agua.',
-    url: 'https://guaufresh.com',
+    url: publicSite,
     siteName: 'Guau Fresh',
     images: [
       {
@@ -101,6 +103,7 @@ const metadata: Metadata = {
     <title>{title ? `${title} | Guau Fresh` : metadata.title?.default}</title>
     <meta name="description" content={metadata.description} />
     <meta name="keywords" content={metadata.keywords?.join(', ')} />
+    <meta property="og:url" content={publicSite} />
     <meta property="og:title" content={metadata.openGraph?.title} />
     <meta property="og:description" content={metadata.openGraph?.description} />
     <meta property="og:image" content={metadata.openGraph?.images?.[0]?.url} />
